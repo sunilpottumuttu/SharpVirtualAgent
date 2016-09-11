@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
+using OpenWeatherMap;
 
 //http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
+//https://github.com/joancaron/OpenWeatherMap-Api-Net
 
 namespace NBTApp.Weather
 {
@@ -40,6 +42,7 @@ namespace NBTApp.Weather
 
             var city = string.Empty;
 
+            //Get City Name
             var entitiesList = res.Entities.ToList();
             foreach (var entity in entitiesList)
             {
@@ -49,31 +52,31 @@ namespace NBTApp.Weather
                 }
             }
 
-            //call weather service
+            //Call Weather Service
             var obj = (WeatherApp)weatherObj;
             Task<WeatherReport> weatherReportTask = obj.GetWeatherByCity(city);
             weatherReportTask.Wait();
             var result = weatherReportTask.Result;
-
-            //Console.WriteLine("Top Scoring Intent " + res.TopScoringIntent.Name);
             return await Task.FromResult<bool>(true);
+
         }
 
         private async Task<WeatherReport> GetWeatherByCity(string cityName)
         {
+            var client = new OpenWeatherMapClient(Globals.OPENWEATHER_APIKEY);
+            var reponse = await client.Forecast.GetByName(cityName: cityName);
+            this.__weatherReport = new WeatherReport { Forecast= reponse};
+            return this.__weatherReport;
 
-            var client = new RestClient(this.__url);
-            var request = new RestRequest(Method.GET);
-            request.AddParameter("q", cityName);
-            request.AddParameter("appid", this._apiKey);
-
-            var response = client.Execute(request);
-
-
-            //var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName},uk&appid={_apiKey}";
-            //return await weatherURL.GetJsonAsync<WeatherReport>();
-            this.__weatherReport = new WeatherReport();
-            return await Task.FromResult<WeatherReport>(this.__weatherReport);
+            //var client = new RestClient(this.__url);
+            //var request = new RestRequest(Method.GET);
+            //request.AddParameter("q", cityName);
+            //request.AddParameter("appid", this._apiKey);
+            //var response = client.Execute(request);
+            ////var weatherURL = $"http://api.openweathermap.org/data/2.5/weather?q={cityName},uk&appid={_apiKey}";
+            ////return await weatherURL.GetJsonAsync<WeatherReport>();
+            //this.__weatherReport = new WeatherReport();
+            //return await Task.FromResult<WeatherReport>(this.__weatherReport);
         }
 
 

@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Globals.cs" />
-    <Compile Include="NBTApp.cs" />
+    <Compile Include="PersonalAssistant\PersonalAssistantApp.cs" />
     <Compile Include="Weather\WeatherApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weather\WeatherReport.cs" />
@@ -54,6 +54,10 @@
     <ProjectReference Include="..\LuisClientLibrary\LuisClientLibrary.csproj">
       <Project>{af6f1e9f-26a5-4109-9957-f3a1a3611328}</Project>
       <Name>LuisClientLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenWeatherMap\OpenWeatherMap.csproj">
+      <Project>{c223ce7d-a7e7-4f76-8fc1-afc7fbc95234}</Project>
+      <Name>OpenWeatherMap</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

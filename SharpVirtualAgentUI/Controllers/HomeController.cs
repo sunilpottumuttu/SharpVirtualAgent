@@ -12,23 +12,9 @@ namespace SharpVirtualAgentUI.Controllers
     {
         public ActionResult Index()
         {
-            
-            WeatherApp app = new WeatherApp();
-
-            var report = app.Query("weather in delhi");
-            //app.Query("weather in delhi");
-
-
-
+            ViewBag.Message = "Your application description page.";
             return View();
         }
-
-        //public async Task<ActionResult> IndexAsync()
-        //{
-        //    WeatherApp app = new WeatherApp();
-        //    var report = await app.Query("weather in delhi");
-        //    return View();
-        //}
 
         public ActionResult About()
         {
@@ -43,5 +29,14 @@ namespace SharpVirtualAgentUI.Controllers
 
             return View();
         }
+
+        [HttpGet()]
+        public JsonResult GetWeather(string sentence)
+        {
+            var app = new WeatherApp();
+            var report = app.Query(sentence);
+            return Json(report,JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

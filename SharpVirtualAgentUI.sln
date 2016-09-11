@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpVirtualAgentUI", "SharpVirtualAgentUI\SharpVirtualAgentUI.csproj", "{EB10F45B-6081-489A-9670-D1A17D58B98F}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBTApp", "NBTApp\NBTApp.csproj", "{5F7413FA-5953-477B-BDC3-EA29B83D34D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtLibs", "ExtLibs", "{DC9E7C70-A13E-4A43-9743-F322777A4E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherMap", "OpenWeatherMap\OpenWeatherMap.csproj", "{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +31,16 @@ Global
 		{5F7413FA-5953-477B-BDC3-EA29B83D34D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F7413FA-5953-477B-BDC3-EA29B83D34D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F7413FA-5953-477B-BDC3-EA29B83D34D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AF6F1E9F-26A5-4109-9957-F3A1A3611328} = {DC9E7C70-A13E-4A43-9743-F322777A4E00}
+		{C223CE7D-A7E7-4F76-8FC1-AFC7FBC95234} = {DC9E7C70-A13E-4A43-9743-F322777A4E00}
 	EndGlobalSection
 EndGlobal

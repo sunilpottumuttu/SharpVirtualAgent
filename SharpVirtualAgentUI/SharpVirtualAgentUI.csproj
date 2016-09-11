@@ -248,10 +248,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LuisClientLibrary\LuisClientLibrary.csproj">
-      <Project>{af6f1e9f-26a5-4109-9957-f3a1a3611328}</Project>
-      <Name>LuisClientLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NBTApp\NBTApp.csproj">
       <Project>{5f7413fa-5953-477b-bdc3-ea29b83d34d0}</Project>
       <Name>NBTApp</Name>
