@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 
+//http://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
+
 namespace NBTApp.Weather
 {
     public class WeatherApp
@@ -21,15 +23,14 @@ namespace NBTApp.Weather
         {
             this.__luisClient = new LuisClient(Globals.LUIS_APPID, Globals.LUIS_APPKEY, true);
             this.__router = IntentRouter.Setup<WeatherApp>(this.__luisClient);
-            
         }
 
-        public Task<WeatherReport> Query(string sentence)
+        public WeatherReport Query(string sentence)
         {
             Task<bool> taskResult = this.__router.Route(sentence, this);
             taskResult.Wait();
-            //return this.__weatherReport;
-            return Task.FromResult<WeatherReport>(this.__weatherReport);
+            return this.__weatherReport;
+            //return Task.FromResult<WeatherReport>(this.__weatherReport);
         }
 
 

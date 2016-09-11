@@ -155,7 +155,7 @@ namespace Microsoft.Cognitive.LUIS
             if (luisResult.DialogResponse.ContextId == null) throw new ArgumentNullException("Context id cannot be null");
 
             var uri = EncodeRequest(text) + $"&contextid={luisResult.DialogResponse.ContextId}";
-            var result = await _http.RestGet(uri);
+            var result = await _http.RestGet(uri).ConfigureAwait(false);
             return new LuisResult(this, result);
         }
 
@@ -170,7 +170,7 @@ namespace Microsoft.Cognitive.LUIS
                 return new LuisResult();
 
             var uri = EncodeRequest(text);
-            var result = await _http.RestGet(uri);
+            var result = await _http.RestGet(uri).ConfigureAwait(false);
             return new LuisResult(this, result);
         }
 

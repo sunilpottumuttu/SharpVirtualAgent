@@ -12,9 +12,11 @@ namespace SharpVirtualAgentUI.Controllers
     {
         public ActionResult Index()
         {
-            //WeatherApp app = new WeatherApp();
+            
+            WeatherApp app = new WeatherApp();
 
-            //var report = app.Query("weather in delhi");
+            var report = app.Query("weather in delhi");
+            //app.Query("weather in delhi");
 
 
 

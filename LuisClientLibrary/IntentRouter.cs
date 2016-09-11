@@ -253,7 +253,7 @@ namespace Microsoft.Cognitive.LUIS
         {
             if (_client == null) throw new InvalidOperationException("No API endpoint has been specified for this IntentRouter");
 
-            var result = await _client.Predict(text);
+            var result = await _client.Predict(text).ConfigureAwait(false);
             return await Route(result, context);
         }
 
