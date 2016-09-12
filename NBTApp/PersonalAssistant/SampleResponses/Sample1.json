@@ -1,0 +1,30 @@
+﻿{
+  "query": "make an appointment with lisa at 2pm on sunday",
+  "intents": [
+    {
+      "intent": "builtin.intent.calendar.create_calendar_entry"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "appointment with lisa",
+      "type": "builtin.calendar.title"
+    },
+    {
+      "entity": "2pm",
+      "type": "builtin.calendar.start_time",
+      "resolution": {
+        "resolution_type": "builtin.datetime.time",
+        "time": "XXXX-WXX-7T14"
+      }
+    },
+    {
+      "entity": "sunday",
+      "type": "builtin.calendar.start_date",
+      "resolution": {
+        "resolution_type": "builtin.datetime.time",
+        "time": "XXXX-WXX-7T14"
+      }
+    }
+  ]
+}
