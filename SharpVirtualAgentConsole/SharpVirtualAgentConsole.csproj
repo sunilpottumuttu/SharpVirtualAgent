@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F7413FA-5953-477B-BDC3-EA29B83D34D0}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{C18A0EAB-3258-43C9-A841-596E5D91CE8F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NBTApp</RootNamespace>
-    <AssemblyName>NBTApp</AssemblyName>
+    <RootNamespace>SharpVirtualAgentConsole</RootNamespace>
+    <AssemblyName>SharpVirtualAgentConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,10 +41,6 @@
       <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,24 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Globals.cs" />
-    <Compile Include="PersonalAssistant\PersonalAssistantApp.cs" />
-    <Compile Include="Weather\WeatherApp.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Weather\WeatherReport.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LuisClientLibrary\LuisClientLibrary.csproj">
-      <Project>{af6f1e9f-26a5-4109-9957-f3a1a3611328}</Project>
-      <Name>LuisClientLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OpenWeatherMap\OpenWeatherMap.csproj">
-      <Project>{c223ce7d-a7e7-4f76-8fc1-afc7fbc95234}</Project>
-      <Name>OpenWeatherMap</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NBTApp\NBTApp.csproj">
+      <Project>{5f7413fa-5953-477b-bdc3-ea29b83d34d0}</Project>
+      <Name>NBTApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
