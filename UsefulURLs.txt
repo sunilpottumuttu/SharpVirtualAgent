@@ -1,0 +1,9 @@
+https://gist.github.com/szolotykh/e57476ff257bf1ae01b0
+https://ctrlq.org/code/19680-html5-web-speech-api
+http://stephenwalther.com/archive/2015/01/05/using-html5-speech-recognition-and-text-to-speech
+https://www.sitepoint.com/html5-speech-input-fields/
+http://html5-examples.craic.com/google_chrome_text_to_speech.html
+http://blog.teamtreehouse.com/
+http://blog.teamtreehouse.com/accepting-speech-input-html5-forms
+http://codepen.io/matt-west/pen/wbpqu
+http://codesamplez.com/programming/html5-web-speech-api
